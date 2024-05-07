@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Управляшка</title>
+
+        <link rel="icon" href="bookopen.png" type="image/x-icon">
+        <link href="/css/shop.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <script src="https://kit.fontawesome.com/98db032af2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<header>
+    <div id="logo">
+        <a href="">
+            Управляшка компашкой
+        </a>
+    </div>
+    <input id="menu__toggle" type="checkbox">
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <nav class="menu__box">
+        <div><a href="auth/user">Профиль</a></div>
+        <div><a href="auth/login">Выход</a></div>
+    </nav>
+</header>
+<main>
+       <pre>
+
+
+
+
+        </pre>
+
+
+
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getId}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<div class="task_4">
+    <footer>
+        <div class="about" id="T4_item_1">
+            <h3>About Us</h3>
+            <p>
+                "Управляшка компашкой" - сайт для управления персоналом. Быстрый и удобный!
+            </p>
+        </div>
+        <div class="links" id="T4_item_2">
+            <h3>Quick Links</h3>
+            <ul>
+                <li>About</li>
+                <li>Interesting Facts</li>
+                <li>Contacts</li>
+                <li><a href="reg.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="shop" id="T4_item_3">
+            <h3>Shop</h3>
+            <ul>
+                <li><a href="shop.html">books</a></li>
+            </ul>
+        </div>
+        <div class="contacts" id="T4_item_4">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Алтуфьево, 2</li>
+                <li>8 965 340 32 63</li>
+                <li>8 965 340 32 63</li>
+                <li>apl2612@mail.ru</li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+</footer>
+</body>
+
+</html>

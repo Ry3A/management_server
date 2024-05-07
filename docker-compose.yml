@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+   mysql:
+      image: mysql:latest
+      environment:
+         MYSQL_ROOT_PASSWORD: password
+         MYSQL_DATABASE: management_db
+      volumes:
+         - mysql-data:/var/lib/mysql
+      networks:
+         - management-network
+
+   server:
+      build: .
+      restart: always
+      ports:
+         - '9090:9090'
+      environment:
+         SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/management_db
+         SPRING_DATASOURCE_USERNAME: root
+         SPRING_DATASOURCE_PASSWORD: password
+         SERVER_PORT: 9090
+      depends_on:
+         - mysql
+      networks:
+         - management-network
+
+networks:
+   management-network:
+
+volumes:
+   mysql-data:
